@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <div>
+        <h3>欢迎来到首页</h3>
+    </div>
+    <div>
+        <a th:href="@{/userLogin}">普通用户</a>
+    </div>
+    <div>
+        <a th:href="@{/adminLogin}">管理员用户</a>
+    </div>
+</body>
+</html>

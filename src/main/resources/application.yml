@@ -1,0 +1,10 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /security
+
+
+#禁用thymeleaf缓存
+spring:
+  thymeleaf:
+    cache: false
