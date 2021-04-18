@@ -21,6 +21,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         //没有权限默认会到登录页面
         http.formLogin();
+        //注销开启了注销功能
+        http.logout().logoutSuccessUrl("/");
     }
 
     //认证的规则
@@ -28,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         //这些数据正常应该从数据库中读取
+        //auth.jdbcAuthentication().dataSource()
         auth.inMemoryAuthentication()
                 .passwordEncoder(new BCryptPasswordEncoder())
                 .withUser("lkf").password(new BCryptPasswordEncoder().encode("123456"))
